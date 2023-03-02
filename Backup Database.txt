@@ -1,0 +1,9 @@
+Backup Database
+-------------------------------------------
+mysqldump --opt -h localhost -u root -pMyNewpass1! scms | gzip > scms_backup.gz
+
+Restore Database:
+---------------------------------
+$mysql -u root -pMyNewpass1! -e 'CREATE DATABASE scms';
+$gunzip < scms_backup.gz | mysql -u root -pMyNewpass1! scms;
+ 
